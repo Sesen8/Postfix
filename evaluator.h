@@ -6,6 +6,7 @@
 #include <string>
 using std::string;
 
+
 double Evaluate(const string& postfix, bool& error);
 
 #endif
