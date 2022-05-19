@@ -4,26 +4,26 @@
 #include <math.h>
 
 
-using namespace std;
+
 
 
 
 double Evaluate(const string& postfix, bool& error){
     std::stack<double> numbers;
-    std::stack<char> symbols;
 
-    string a;
-    string b;
+
+    string postfixLine;
+
 
     std::stringstream line(postfix);
 
-    while(line>>a){
-        if(isdigit(a.at(0))){
+    while(line>>postfixLine){
+        if(isdigit(postfixLine.at(0))){
 
-            numbers.push(stod(a));
+            numbers.push(stod(postfixLine));
         }
 
-        else if(a=="+"|| a=="-" || a=="*" || a=="^" || a=="/"){
+        else if(postfixLine=="+"|| postfixLine=="-" || postfixLine=="*" || postfixLine=="^" || postfixLine=="/"){
             if(numbers.empty() || numbers.size() == 1){
                 error = true;
                 return -1;
@@ -34,7 +34,7 @@ double Evaluate(const string& postfix, bool& error){
             double firstNum = numbers.top();
             numbers.pop();
 
-            switch(a.at(0)){
+            switch(postfixLine.at(0)){
                 case '+': numbers.push(firstNum+secondNum);
                     break;
                 case '-': numbers.push(firstNum-secondNum);
