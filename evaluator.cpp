@@ -1,3 +1,10 @@
+/*
+ * Title:		Lab 4 Postfix
+ * Purpose:		To preform calculations based of a string of numbers and operations
+ * Author:		Sesen Yonas
+ * Date:		05 18, 2022
+ */
+
 #include "evaluator.h"
 #include <stack>
 #include <sstream>
